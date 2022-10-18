@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "5e138482-513c-493d-a3a6-320f08887b2a",
+		"name": "EpamHomeWork",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1202925"
+	},
+	"item": [
+		{
+			"name": "Create_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"user_id\", jsondata.message);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"username\": \"{{user_name}}\",\n  \"firstName\": \"{{firstName}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"email\": \"viktorbibik@ukr.net\",\n  \"password\": \"qwerty12345\",\n  \"phone\": \"qwerty12345\",\n  \"userStatus\": 1\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_user_data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response_username = \"ViktorBibik_01\";\r",
+							"var response_firstName = \"Viktor_01\";\r",
+							"var response_lastName = \"Bibik_01\";\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"response_username: \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_username);\r",
+							"});\r",
+							"pm.test(\"response_firstName: \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_firstName);\r",
+							"});\r",
+							"pm.test(\"response_lastName: \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_lastName);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/{{user_name}}",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"{{user_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change_users_firstname_and_lastname",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response_dody = \"\\\"code\\\":200\";\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_dody);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": {{user_id}},\r\n  \"username\": \"{{user_name}}\",\r\n  \"firstName\": \"Viktor_02\",\r\n  \"lastName\": \"Bibik_02\",\r\n  \"email\": \"viktorbibik@ukr.net\",\r\n  \"password\": \"qwerty12345\",\r\n  \"phone\": \"qwerty12345\",\r\n  \"userStatus\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/{{user_name}}",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"{{user_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check_first_and_last_names_changes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response_username = \"ViktorBibik_01\";\r",
+							"var response_firstName = \"Viktor_02\";\r",
+							"var response_lastName = \"Bibik_02\";\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"response_username: \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_username);\r",
+							"});\r",
+							"pm.test(\"response_firstName: \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_firstName);\r",
+							"});\r",
+							"pm.test(\"response_lastName: \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_lastName);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/{{user_name}}",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"{{user_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"var response_code = \"\\\"code\\\":200\";\r",
+							"var response_message = \"ViktorBibik_01\";\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_code);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(response_message);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/{{user_name}}",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"{{user_name}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

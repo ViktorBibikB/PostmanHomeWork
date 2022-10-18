@@ -1,0 +1,221 @@
+{
+	"id": "ce69c614-d040-4d05-a880-ac2a6ab78250",
+	"name": "EpamHomeWork",
+	"timestamp": "2022-10-18T14:33:55.074Z",
+	"collection_id": "1202925-5e138482-513c-493d-a3a6-320f08887b2a",
+	"folder_id": 0,
+	"environment_id": "1202925-17bfc821-a163-4166-a551-6b8c72e7dc23",
+	"totalPass": 14,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "e51a5314-6356-4b25-b1db-052fe14e8a0c",
+			"name": "Create_user",
+			"url": "https://petstore.swagger.io/v2/user",
+			"time": 134,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				134
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "329a79be-8496-492d-a0b6-bb12b6da87f2",
+			"name": "Get_user_data",
+			"url": "https://petstore.swagger.io/v2/user/ViktorBibik_01",
+			"time": 140,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response_username: ": true,
+				"response_firstName: ": true,
+				"response_lastName: ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response_username: ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response_firstName: ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response_lastName: ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				140
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response_username: ": true,
+					"response_firstName: ": true,
+					"response_lastName: ": true
+				}
+			]
+		},
+		{
+			"id": "b221d69f-a200-4a5f-aea6-57a3569b2e2b",
+			"name": "Change_users_firstname_and_lastname",
+			"url": "https://petstore.swagger.io/v2/user/ViktorBibik_01",
+			"time": 134,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				134
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "b1672b53-cf5f-4953-805a-64aec7e36c73",
+			"name": "Check_first_and_last_names_changes",
+			"url": "https://petstore.swagger.io/v2/user/ViktorBibik_01",
+			"time": 135,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response_username: ": true,
+				"response_firstName: ": true,
+				"response_lastName: ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response_username: ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response_firstName: ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response_lastName: ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				135
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response_username: ": true,
+					"response_firstName: ": true,
+					"response_lastName: ": true
+				}
+			]
+		},
+		{
+			"id": "57168dbb-6115-4341-b166-d1ff3d4ce79f",
+			"name": "Delete_user",
+			"url": "https://petstore.swagger.io/v2/user/ViktorBibik_01",
+			"time": 140,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				140
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 683,
+	"collection": {
+		"requests": [
+			{
+				"id": "e51a5314-6356-4b25-b1db-052fe14e8a0c",
+				"method": "POST"
+			},
+			{
+				"id": "329a79be-8496-492d-a0b6-bb12b6da87f2",
+				"method": "GET"
+			},
+			{
+				"id": "b221d69f-a200-4a5f-aea6-57a3569b2e2b",
+				"method": "PUT"
+			},
+			{
+				"id": "b1672b53-cf5f-4953-805a-64aec7e36c73",
+				"method": "GET"
+			},
+			{
+				"id": "57168dbb-6115-4341-b166-d1ff3d4ce79f",
+				"method": "DELETE"
+			}
+		]
+	}
+}
